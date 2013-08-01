@@ -12,7 +12,7 @@ module TwitterPoster
 
   class Resource
     def url
-      URI("http://www.iheartquotes.com/api/v1/random?format=json&max_characters=120")
+      URI("http://www.iheartquotes.com/api/v1/random?source=macintosh+math+oneliners+riddles&format=json&max_characters=120")
     end
 
     def get_quote
