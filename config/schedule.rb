@@ -19,6 +19,7 @@
 
 # Learn more: http://github.com/javan/whenever
 
+set :output, File.expand_path(File.join(File.dirname(__FILE__), '..', 'cron.log'))
 
 every 1.hour do
   command %{#{File.expand_path(File.join(File.dirname(__FILE__), '..', 'bin', 'retweet'))} "#nepal #travel -rt"}
