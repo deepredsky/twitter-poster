@@ -19,6 +19,23 @@
 
 # Learn more: http://github.com/javan/whenever
 
+
+every 1.hour do
+  command %{#{File.expand_path(File.join(File.dirname(__FILE__), '..', 'bin', 'retweet'))} "#nepal #travel -rt"}
+end
+
 every 2.hours do
-  command File.expand_path(File.join(File.dirname(__FILE__), '..', 'bin', 'tweet'))
+  command %{#{File.expand_path(File.join(File.dirname(__FILE__), '..', 'bin', 'retweet'))} "#quote #philosophy -rt"}
+end
+
+every 3.hour do
+  command %{#{File.expand_path(File.join(File.dirname(__FILE__), '..', 'bin', 'retweet'))} "#vim -rt"}
+end
+
+every 4.hour do
+  command %{#{File.expand_path(File.join(File.dirname(__FILE__), '..', 'bin', 'retweet'))} "#ruby #programming -rt"}
+end
+
+every 1.hour do
+  command %{#{File.expand_path(File.join(File.dirname(__FILE__), '..', 'bin', 'retweet'))} "#funny #quote -rt"}
 end
