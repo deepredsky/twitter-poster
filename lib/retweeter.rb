@@ -1,4 +1,4 @@
-require 'PStore'
+require 'pstore'
 require 'twitter'
 require 'active_support/all'
 
