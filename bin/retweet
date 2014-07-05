@@ -1,4 +1,8 @@
 #!/usr/bin/env ruby
 require File.expand_path(File.join(File.dirname(__FILE__),'..', 'lib', 'retweeter'))
-Retweeter.new.run
+if ARGV[0].nil?
+  p 'Usage: retweet [query]'
+else
+  Retweeter.run ARGV[0]
+end
 

@@ -1,14 +1,19 @@
 require 'PStore'
 require 'twitter'
+require 'active_support/all'
 
 class Retweeter
+  def initialize(query)
+    @query = query
+  end
+
   def run
     options = {
       :result_type => "recent",
       :count => 10
     }
     options[:since_id] = since_id unless since_id.nil?
-    result = client.search('#nepal #travel -rt', options).take(10)
+    result = client.search(search_query.to_s, options).take(10)
     if result.first
       last_id = result.first.id
       result.each do |tweet|
@@ -21,7 +26,7 @@ class Retweeter
           puts e.message
         end
       end
-      Store.new.save("since_id", last_id)
+      Store.new.save(search_query.since_id, last_id)
     end
   end
 
@@ -34,8 +39,18 @@ class Retweeter
     end
   end
 
+  def self.run(query)
+    new(query).run
+  end
+
+  private
+
+  def search_query
+    @search_query ||= SearchQuery.new(@query)
+  end
+
   def since_id
-    Store.new.read("since_id")
+    Store.new.read(search_query.since_id)
   end
 end
 
@@ -55,5 +70,19 @@ class Store
   private
   def store_name
     @store_name ||= PStore.new("last.pstore")
+  end
+end
+
+class SearchQuery
+  def initialize(phrase)
+    @phrase = phrase
+  end
+
+  def since_id
+    @phrase.to_s.parameterize + '_since_id'
+  end
+
+  def to_s
+    @phrase.to_s
   end
 end

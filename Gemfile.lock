@@ -60,6 +60,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activesupport
   fakeweb
   rspec
   twitter
