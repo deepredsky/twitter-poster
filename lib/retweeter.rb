@@ -10,6 +10,7 @@ class Retweeter
   def run
     options = {
       :result_type => "recent",
+      :lang => :en,
       :count => 10
     }
     options[:since_id] = since_id unless since_id.nil?
