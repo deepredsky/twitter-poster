@@ -29,14 +29,10 @@ every 23.minutes do
   command %{#{File.expand_path(File.join(File.dirname(__FILE__), '..', 'bin', 'retweet'))} "#quote #philosophy -rt"}
 end
 
-every 34.minutes do
-  command %{#{File.expand_path(File.join(File.dirname(__FILE__), '..', 'bin', 'retweet'))} "#vim -rt"}
-end
-
 every 44.minutes do
   command %{#{File.expand_path(File.join(File.dirname(__FILE__), '..', 'bin', 'retweet'))} "#ruby #programming -rt"}
 end
 
-every 2.hour do
-  command %{#{File.expand_path(File.join(File.dirname(__FILE__), '..', 'bin', 'retweet'))} "#funny #quote -rt"}
-end
+#every 2.hour do
+#  command %{#{File.expand_path(File.join(File.dirname(__FILE__), '..', 'bin', 'retweet'))} "#funny #quote -rt"}
+#end
