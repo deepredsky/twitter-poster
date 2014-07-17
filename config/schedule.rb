@@ -25,7 +25,7 @@ every 15.minutes do
   command %{#{File.expand_path(File.join(File.dirname(__FILE__), '..', 'bin', 'retweet'))} "#nepal #travel -rt"}
 end
 
-every 23.minutes do
+every 123.minutes do
   command %{#{File.expand_path(File.join(File.dirname(__FILE__), '..', 'bin', 'retweet'))} "#quote #philosophy -rt"}
 end
 

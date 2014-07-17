@@ -11,10 +11,10 @@ class Retweeter
     options = {
       :result_type => "recent",
       :lang => :en,
-      :count => 5
+      :count => 2
     }
     options[:since_id] = since_id unless since_id.nil?
-    result = client.search(search_query.to_s, options).take(5)
+    result = client.search(search_query.to_s, options).take(2)
     if result.first
       last_id = result.first.id
       result.each do |tweet|
