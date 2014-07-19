@@ -21,15 +21,15 @@
 
 set :output, File.expand_path(File.join(File.dirname(__FILE__), '..', 'cron.log'))
 
-every 15.minutes do
+every 3.hours do
   command %{#{File.expand_path(File.join(File.dirname(__FILE__), '..', 'bin', 'retweet'))} "#nepal #travel -rt"}
 end
 
-every 123.minutes do
-  command %{#{File.expand_path(File.join(File.dirname(__FILE__), '..', 'bin', 'retweet'))} "#quote #philosophy -rt"}
-end
+# every 123.minutes do
+#   command %{#{File.expand_path(File.join(File.dirname(__FILE__), '..', 'bin', 'retweet'))} "#quote #philosophy -rt"}
+# end
 
-every 44.minutes do
+every 5.hours do
   command %{#{File.expand_path(File.join(File.dirname(__FILE__), '..', 'bin', 'retweet'))} "#ruby #programming -rt"}
 end
 
